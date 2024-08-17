@@ -56,11 +56,11 @@ You can use the following commands to interact with the Task Tracker CLI:
 - `add`: Add a new task
 
 ```bash
-tasklist add "Task Description" "status"
+tasklist add <description> <status>
 # status is not required, default is "todo"
 ```
 
-- list: List all tasks
+- `list`: List all tasks
 
 ```bash
 tasklist list
@@ -69,19 +69,19 @@ tasklist list
 - `update`: Update a task
 
 ```bash
-tasklist update 1 "Task Description"
+tasklist update <id> <description>
 ```
 
 - `mark`: change task status
 
 ```bash
-tasklist mark 1 "done"
+tasklist mark <id> <status>
 ```
 
 - `delete`: Delete a task
 
 ```bash
-tasklist delete 1
+tasklist delete <id>
 ```
 
 ## More on Task Tracker CLI
