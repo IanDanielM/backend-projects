@@ -1,4 +1,3 @@
-
 # TASK TRACKER CLI
 
 Task Tracker CLI allows you to track your tasks directly from the terminal. You can add, delete, update, and list tasks.
@@ -19,7 +18,7 @@ There are two ways you can run this project:
 You can run the script directly using Python:
 
 ```bash
-python3 task-tracker.py --help
+python3 main.py --help
 ```
 
 ### 2. Use it as a Command-Line Tool
@@ -84,3 +83,6 @@ tasklist mark 1 "done"
 ```bash
 tasklist delete 1
 ```
+
+## More on Task Tracker CLI
+This project has been created as part of the [Backend Projects](https://roadmap.sh/projects/task-tracker) from [roadmap.sh](https://roadmap.sh/). You can find more information on how to build this project by visiting the link.
