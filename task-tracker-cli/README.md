@@ -34,7 +34,7 @@ nano ~/.bashrc
 2. Add an alias for the command:
 
 ```bash
-alias tasklist="python3 /path/to/your/script/task-tracker.py"
+alias tasklist="python3 /path/to/your/script/main.py"
 ```
 
 3. Save and reload your shell configuration:
