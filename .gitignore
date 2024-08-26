@@ -1,2 +1,5 @@
 __pycache__
 tasks.json
+expenses.csv
+expense_tracker/expenses/fake_data.py
+monthly_cap.csv
