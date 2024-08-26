@@ -1,7 +1,7 @@
 # expense Tracker
 
 import datetime
-from typing import Optional
+from typing import Any, Dict, List, Optional
 
 from expenses.csv_helper import CSVHelper
 
@@ -14,12 +14,12 @@ def parse_date(date_string: str) -> datetime.date:
     return datetime.datetime.strptime(date_string, '%Y-%m-%d').date()
 
 
-def read_all_expenses():
+def read_all_expenses() -> List[Dict[str, Any]]:
     with CSVHelper(CSV_FILE, 'r', FIELDNAMES) as csv_file:
         return csv_file.read_all()
 
 
-def read_expense_by_category(category):
+def read_expense_by_category(category) -> List[Dict[str, Any]]:
     expenses = []
     with CSVHelper(CSV_FILE, 'r', FIELDNAMES) as csv_file:
         for row in csv_file.read_all():
@@ -42,7 +42,7 @@ def get_total_monthly_expense() -> float:
 
 
 def get_monthly_cap() -> Optional[float]:
-    with CSVHelper(CAP_FILE, 'r') as csv_file:
+    with CSVHelper(CAP_FILE, 'r', headers=['monthly_cap', 'update_date']) as csv_file:
         cap = csv_file.read_all()
         if cap:
             return cap[-1].get('monthly_cap', 0)
@@ -80,7 +80,7 @@ def create_expense(description: str, amount: float, category: str) -> str:
     return message
 
 
-def update_expense(row_number, description: str = None, amount: float = None):
+def update_expense(row_number, description: str = None, amount: float = None) -> str:
     if amount is not None and amount < 0:
         return "Error: Expense amount cannot be negative."
     with CSVHelper(CSV_FILE, 'r+', headers=FIELDNAMES) as csv_file:
@@ -105,7 +105,7 @@ def update_expense(row_number, description: str = None, amount: float = None):
     return message
 
 
-def delete_rows(row_number):
+def delete_rows(row_number) -> str:
     with CSVHelper(CSV_FILE, 'r+') as csv_file:
         rows = csv_file.read_all()
         if not (1 <= row_number <= len(rows)):
@@ -115,7 +115,7 @@ def delete_rows(row_number):
     return "{} deleted successfully".format(row_number)
 
 
-def expenses_summary():
+def expenses_summary() -> str:
     expenses = read_all_expenses()
     summary = {
         "total": sum(float(expense['amount']) for expense in expenses),
