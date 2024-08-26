@@ -51,21 +51,21 @@ expense-tracker --help
 
 ## Usage
 
-You can use the following commands to interact with the Task Tracker CLI:
+You can use the following commands to interact with the Expense Tracker CLI:
 
-- `add`: Add a new task
+- `add`: Add a new expense
 
 ```bash
 expense-tracker add --description "Rent" --amount 30 --category "essentials"
 ```
 
-- `list`: List all tasks
+- `list`: List all expenses
 
 ```bash
 expense-tracker list
 ```
 
-- `update`: Update a task
+- `update`: Update an expense
 
 ```bash
 expense-tracker update --id 1 --description "Groceries" --amount 20
@@ -89,7 +89,7 @@ expense-tracker summary_per_month --month 8
 expense-tracker set_monthly_cap --amount 10000
 ```
 
-- `delete`: Delete a task
+- `delete`: Delete an expense
 
 ```bash
 expense-tracker delete 1
