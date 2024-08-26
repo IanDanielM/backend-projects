@@ -25,7 +25,7 @@ python3 main.py --help
 
 If you want to run the script as a command-line tool:
 
-1. Open your `.bashrc` (or `.zshrc` for zsh users):
+1. Open your `.bashrc`:
 
 ```bash
 nano ~/.bashrc
