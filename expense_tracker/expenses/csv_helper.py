@@ -71,7 +71,7 @@ class CSVHelper:
         self.writer.writeheader()
         self.writer.writerows(rows)
 
-    def update_row(self, row_number: int, updated_row: Dict[str, Any]):
+    def update_row(self, row_number: int, updated_row: Dict[str, Any]) -> List[Dict[str, Any]]:
         rows = self.read_all()
         if 1 <= row_number <= len(rows):
             rows[row_number - 1].update(updated_row)
@@ -79,7 +79,7 @@ class CSVHelper:
         else:
             raise IndexError("Out of range")
 
-    def delete_row(self, row_number: int):
+    def delete_row(self, row_number: int) -> List[Dict[str, Any]]:
         rows = self.read_all()
         if 1 <= row_number <= len(rows):
             del rows[row_number - 1]
