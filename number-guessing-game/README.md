@@ -62,4 +62,3 @@ play-game play
 ## More on this Project
 
 This project has been created as part of the [Backend Projects](https://roadmap.sh/projects/number-guessing-game) from [roadmap.sh](https://roadmap.sh/). You can find more information on how to build this project by visiting the [link](https://roadmap.sh/projects/number-guessing-game).
-https://roadmap.sh/projects/number-guessing-game
